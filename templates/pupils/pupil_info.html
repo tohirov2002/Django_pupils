@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Pupil info
+{% endblock %}
+
+{% block content %}
+    <h1>O'quvchi: <span style="color: blue;">{{pupil.name}}</span></h1>
+    <h2>Marks:</h2>
+    <ul class="list-style: none;">
+        <li style="color: green;">1-oyda <span style="color: red;">{{ pupil.mark_1 }}</span> ball  olgan</li>
+        <li style="color: green;">2-oyda <span style="color: red;">{{ pupil.mark_2 }}</span> ball  olgan</li>
+        <li style="color: green;">3-oyda <span style="color: red;">{{ pupil.mark_3 }}</span> ball  olgan</li>
+        <li style="color: green;">4-oyda <span style="color: red;">{{ pupil.mark_4 }}</span> ball  olgan</li>
+        <li style="color: green;">5-oyda <span style="color: red;">{{ pupil.mark_5 }}</span> ball  olgan</li>
+        <li style="color: green;">6-oyda <span style="color: red;">{{ pupil.mark_6 }}</span> ball  olgan</li>
+    </ul>
+{% endblock %}

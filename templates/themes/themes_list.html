@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Themes list
+{% endblock %}
+
+{% block content %}
+    <h1>Themes list</h1>
+    <form action="" method="get" class="m-3">
+        <label for="themes">Name:</label>
+        <input type="text" name="themes" placeholder="Insert name....">
+        <input class="ms-2 " type="submit" value="search">
+        <button type="submit" class="btn btn-success ms-2"><a style="text-decoration: none; color: white;" href="{% url 'add_themes' %}">add themes</a></button>
+    </form>
+    <table class="table table-primary mt-3">
+        <tr>
+            <th>DARS</th>
+            <th>Mavzular</th>
+            <th>EDIT THEMES</th>
+            <th>DELETE</th>
+        </tr>
+        {% for them in themes %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ them.name }}</td>
+                <td>
+        <button type="submit" class="btn btn-info ms-2"><a style="text-decoration: none; color: white;" href="{% url 'themes_edit' them.pk %}">edit themes</a></button>
+                </td>
+                <td>
+        <button type="submit" class="btn btn-danger ms-2"><a style="text-decoration: none; color: white;" href="{% url 'delete_themes' them.pk %}">delete</a></button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

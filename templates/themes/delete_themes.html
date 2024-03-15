@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete themes
+{% endblock %}
+
+{% block content %}
+    <div class="mt-4 mb-4 text-center ">
+        <h1>Delete themes info</h1>
+        <form action="" method="post" class="m-3">
+            {% csrf_token %}
+               <p>
+                <label for="name">Name:</label>
+                    <input type="text" name="name" value="{{ delete_themes.name }}" required>
+                </p>
+            <h4>Haqiqatdan O'chirmoqchimisz?</h4>
+            <button name="confirm_delete" type="submit" class="btn btn-danger mt-2 me-3">Delete</button>
+            <button type="submit" class="btn btn-info mt-2"><a style="text-decoration: none; color: white;" href="{% url 'themes_list' %}">Cansel</a></button>
+        </form>
+    </div>
+{% endblock %}

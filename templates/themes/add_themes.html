@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Insert new themes
+{% endblock %}
+    Themes add
+{% block content %}
+    <div class="mt-4 mb-4 text-center ">
+        <h1>Insert new themes</h1>
+        <form action="" method="post" class="gap-3x">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Insert themes data</legend>
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" placeholder="Mavzu kiriting" required>
+                </p>
+                <button style="color:white;" class="btn btn-info mt-2">add themes</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

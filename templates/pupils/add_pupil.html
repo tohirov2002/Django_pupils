@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Insert new pupil
+{% endblock %}
+
+{% block content %}
+    <div class="mt-4 mb-4 text-center ">
+        <h1>Insert new pupil</h1>
+        <form action="" method="post" class="gap-3x">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Insert pupils data</legend>
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" placeholder="Name kiriting" required>
+                </p>
+                <p>
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" min="0" max="100" placeholder="age" required>
+                </p>
+                <p>
+                    <label for="mark_1">Mark of month 1:</label>
+                    <input type="number" name="mark_1" min="0" max="50" placeholder="1-oy ball" required>
+                </p>
+                <p>
+                    <label for="mark_2">Mark of month 2:</label>
+                    <input type="number" name="mark_2" min="0" max="50" placeholder="2-oy ball" required>
+                </p>
+                <p>
+                    <label for="mark_3">Mark of month 3:</label>
+                    <input type="number" name="mark_3" min="0" max="50" placeholder="3-oy ball" required>
+                </p>
+                <p>
+                    <label for="mark_4">Mark of month 4:</label>
+                    <input type="number" name="mark_4" min="0" max="50" placeholder="4-oy ball" required>
+                </p>
+                <p>
+                    <label for="mark_5">Mark of month 4:</label>
+                    <input type="number" name="mark_5" min="0" max="50" placeholder="5-oy ball" required>
+                </p>
+                <p>
+                    <label for="mark_6">Mark of month 6:</label>
+                    <input type="number" name="mark_6" min="0" max="50" placeholder="6-oy ball" required>
+                </p>
+                <button style="color:white;" class="btn btn-info mt-2">add pupil</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

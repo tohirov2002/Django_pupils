@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Change pupil
+{% endblock %}
+
+{% block content %}
+    <div class="mt-4 mb-4 text-center ">
+        <h1>Change pupil info</h1>
+        <form action="" method="post" class="gap-3x">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Insert pupils new data</legend>
+                <p>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" value="{{ pupil.name }}" required>
+                </p>
+                <p>
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" min="0" max="100" value="{{ pupil.age }}"  required>
+                </p>
+                <p>
+                    <label for="mark_1">Mark of month 1:</label>
+                    <input type="number" name="mark_1" min="0" max="50" value="{{ pupil.mark_1 }}"  required>
+                </p>
+                <p>
+                    <label for="mark_2">Mark of month 2:</label>
+                    <input type="number" name="mark_2" min="0" max="50" value="{{ pupil.mark_2 }}" required>
+                </p>
+                <p>
+                    <label for="mark_3">Mark of month 3:</label>
+                    <input type="number" name="mark_3" min="0" max="50" value="{{ pupil.mark_3 }}" required>
+                </p>
+                <p>
+                    <label for="mark_4">Mark of month 4:</label>
+                    <input type="number" name="mark_4" min="0" max="50" value="{{ pupil.mark_4 }}" required>
+                </p>
+                <p>
+                    <label for="mark_5">Mark of month 4:</label>
+                    <input type="number" name="mark_5" min="0" max="50" value="{{ pupil.mark_5 }}" required>
+                </p>
+                <p>
+                    <label for="mark_6">Mark of month 6:</label>
+                    <input type="number" name="mark_6" min="0" max="50" value="{{ pupil.mark_6 }}" required>
+                </p>
+                <button style="color:white;" class="btn btn-info mt-2">Save changes</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

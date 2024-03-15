@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Pupils list
+{% endblock %}
+
+{% block content %}
+    <h1>Pupils list</h1>
+    <form action="" method="get" class="m-3">
+        <label for="pupil">Name</label>
+        <input type="text" name="pupil" placeholder="Insert name....">
+        <input class="ms-2 " type="submit" value="search">
+        <button type="submit" class="btn btn-success ms-2"><a style="text-decoration: none; color: white;" href="{% url 'add_pupil' %}">add pupil</a></button>
+    </form>
+    <table class="table table-primary mt-3">
+        <tr>
+            <th>N</th>
+            <th>FULL NAME</th>
+            <th>AGE</th>
+            <th>ACTIONS</th>
+            <th>EDIT PUPIL</th>
+            <th>DELETE</th>
+        </tr>
+        {% for pupil in pupils %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ pupil.name }}</td>
+                <td>{{ pupil.age }}</td>
+                <td><a href="{% url 'pupil_info' pupil.id %}">See all info </a></td>
+                <td>
+        <button type="submit" class="btn btn-info ms-2"><a style="text-decoration: none; color: white;" href="{% url 'edit_pupil' pupil.pk %}">edit pupil</a></button>
+                </td>
+                <td>
+        <button type="submit" class="btn btn-danger ms-2"><a style="text-decoration: none; color: white;" href="{% url 'delete_pupil' pupil.id %}">delete</a></button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
