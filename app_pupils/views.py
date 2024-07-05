@@ -55,22 +55,6 @@ def pupils_edit(request,pk):
         return render(request,'pupils/edit_pupil.html',{'pupil': this_pupil})
 
 
-# def delete_pupil(request, pk):
-#     obj = get_object_or_404(Pupil, id=pk)
-#     if request.method == "POST":
-#         obj.name = request.POST['name']
-#         obj.age = request.POST['age']
-#         obj.mark_1 = request.POST['mark_1']
-#         obj.mark_2 = request.POST['mark_2']
-#         obj.mark_3 = request.POST['mark_3']
-#         obj.mark_4 = request.POST['mark_4']
-#         obj.mark_5 = request.POST['mark_5']
-#         obj.mark_6 = request.POST['mark_6']
-#         obj.delete()
-#         return redirect('pupil_info', pk=obj.pk)
-#     else:
-#         return render(request, 'pupils/delete_pupil.html', {'obj': obj})
-
 
 def delete_pupil(request, pk):
     delete_pupils = get_object_or_404(Pupil, id=pk)
